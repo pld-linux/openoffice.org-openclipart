@@ -3,7 +3,7 @@
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
 Version:	0.16
-Release:	0.1
+Release:	0.2
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
 BuildRequires:	XFree86-Xvfb
@@ -16,8 +16,8 @@ ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_ooodir		%{_libdir}/openoffice.org/program
-%define		_gengal		%{_ooodir}/gengal
+%define		_ooodir		%{_libdir}/openoffice.org
+%define		_gengal		%{_ooodir}/program/gengal
 %define		_ooogaldir	%{_ooodir}/gallery
 
 %description

@@ -9,8 +9,7 @@ Group:		Applications/Graphics
 BuildRequires:	XFree86-Xvfb
 BuildRequires:	openclipart-png = 0:%{version}
 BuildRequires:	openoffice.org-core
-Requires:	openoffice.org-core
-Conflicts:	openoffice.org-core < 2.1.0-0.m6.5
+Requires:	openoffice.org-core >= 1:2.1.0-0.m6.5
 # same as openoffice.org
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
 # can't do yet

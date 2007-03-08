@@ -2,20 +2,17 @@
 #  - remove use of Xvfb
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
-Version:	0.18
+Version:	0.16
 Release:	0.1
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
+BuildRequires:	XFree86-Xvfb
 BuildRequires:	openclipart-png = 0:%{version}
 BuildRequires:	openoffice.org-core
-#BuildRequires:	xorg-app-mkfontdir	(missing PreReq in fonts?)
-BuildRequires:	xorg-font-font-cursor-misc
-BuildRequires:	xorg-font-font-misc-misc-base
-BuildRequires:	xorg-xserver-Xvfb
 Requires:	openoffice.org-core
 Conflicts:	openoffice.org-core < 2.1.0-0.m6.5
 # same as openoffice.org
-ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
 # can't do yet
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +33,7 @@ GAL_BIN=%{_gengal}
 GAL_DIR=$(pwd)/gallery
 # start number for the new galleries
 GAL_NUMBER_FROM=70
-XVFB=%{_bindir}/Xvfb
+XVFB=/usr/X11R6/bin/Xvfb
 
 XDISPLAY=98
 echo 'Starting Xvfb...'

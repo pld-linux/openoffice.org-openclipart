@@ -19,9 +19,9 @@ ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_ooodir		%{_libdir}/openoffice.org/program
-%define		_gengal		%{_ooodir}/gengal
-%define		_ooogaldir	%{_ooodir}/gallery
+%define		_ooodir		%{_libdir}/openoffice.org
+%define		_gengal		%{_ooodir}/program/gengal
+%define		_ooogaldir	%{_ooodir}/share/gallery
 
 %description
 OpenOffice.org extra galleries from <http://www.openclipart.org>.

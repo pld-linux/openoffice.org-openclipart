@@ -12,8 +12,7 @@ BuildRequires:	openoffice.org-core
 BuildRequires:	xorg-font-font-cursor-misc
 BuildRequires:	xorg-font-font-misc-misc-base
 BuildRequires:	xorg-xserver-Xvfb
-Requires:	openoffice.org-core
-Conflicts:	openoffice.org-core < 2.1.0-0.m6.5
+Requires:	openoffice.org-core >= 1:2.1.0-0.m6.5
 # same as openoffice.org
 ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
 # can't do yet

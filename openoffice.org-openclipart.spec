@@ -3,12 +3,13 @@
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
 Version:	0.16
-Release:	0.3
+Release:	0.4
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
 BuildRequires:	XFree86-Xvfb
 BuildRequires:	openclipart-png = 0:%{version}
 BuildRequires:	openoffice.org-core
+Requires:	openclipart-png = 0:%{version}
 Requires:	openoffice.org-core >= 1:2.1.0-0.m6.5
 # same as openoffice.org
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon

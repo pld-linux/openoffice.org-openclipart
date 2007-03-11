@@ -13,7 +13,7 @@ Requires:	openclipart-png = 0:%{version}
 Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
 BuildArch:	noarch
 # same as openoffice.org
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_ooodir		%{_libdir}/openoffice.org

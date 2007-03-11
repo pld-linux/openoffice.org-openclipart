@@ -3,7 +3,7 @@
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
 Version:	0.18
-Release:	0.2
+Release:	1
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
 BuildRequires:	openclipart-png = 0:%{version}
@@ -13,16 +13,13 @@ BuildRequires:	xorg-font-font-cursor-misc
 BuildRequires:	xorg-font-font-misc-misc-base
 BuildRequires:	xorg-xserver-Xvfb
 Requires:	openclipart-png = 0:%{version}
-Requires:	openoffice.org-core >= 1:2.1.0-0.m6.5
+Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
+BuildArch:	noarch
 # same as openoffice.org
 ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
-# can't do yet
-#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_ooodir		%{_libdir}/openoffice.org
-%define		_gengal		%{_ooodir}/program/gengal
-%define		_ooogaldir	%{_ooodir}/share/gallery
+%define		_ooogaldir	%{_datadir}/openoffice.org/share/gallery
 
 %description
 OpenOffice.org extra galleries from <http://www.openclipart.org>.
@@ -32,7 +29,11 @@ OpenOffice.org extra galleries from <http://www.openclipart.org>.
 
 %build
 OPENCLIPART_DIR=%{_datadir}/openclipart
-GAL_BIN=%{_gengal}
+if [ -x /usr/lib64/openoffice.org/program/gengal ]; then
+	GAL_BIN=/usr/lib64/openoffice.org/program/gengal
+elif [ -x /usr/lib/openoffice.org/program/gengal ]; then
+	GAL_BIN=/usr/lib/openoffice.org/program/gengal
+fi
 GAL_DIR=$(pwd)/gallery
 # start number for the new galleries
 GAL_NUMBER_FROM=70

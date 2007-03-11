@@ -2,24 +2,23 @@
 #  - remove use of Xvfb
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
-Version:	0.16
-Release:	0.4
+Version:	0.18
+Release:	1
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
 BuildRequires:	XFree86-Xvfb
 BuildRequires:	openclipart-png = 0:%{version}
 BuildRequires:	openoffice.org-core
 Requires:	openclipart-png = 0:%{version}
-Requires:	openoffice.org-core >= 1:2.1.0-0.m6.5
+Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
+BuildArch:	noarch
 # same as openoffice.org
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
-# can't do yet
-#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_ooodir		%{_libdir}/openoffice.org
 %define		_gengal		%{_ooodir}/program/gengal
-%define		_ooogaldir	%{_ooodir}/share/gallery
+%define		_ooogaldir	%{_datadir}/openoffice.org/share/gallery
 
 %description
 OpenOffice.org extra galleries from <http://www.openclipart.org>.

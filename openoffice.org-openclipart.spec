@@ -16,7 +16,7 @@ Requires:	openclipart-png = 0:%{version}
 Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
 BuildArch:	noarch
 # same as openoffice.org
-ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
+ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9 noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_ooogaldir	%{_datadir}/openoffice.org/share/gallery

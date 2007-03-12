@@ -1,14 +1,23 @@
 # TODO
 #  - remove use of Xvfb
+#  - building on ac builders hungs
+#
+# Conditional build:
+%bcond_without	tarball		# don't use tarball, build gallery
+#
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
 Version:	0.18
-Release:	1
+Release:	2
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
+Source0:	%{name}-%{version}.tar.bz2
+# Source0-md5:	b1d699ce11f2bd9d4aed3f4de85d9725
+%if %{without tarball}
 BuildRequires:	XFree86-Xvfb
 BuildRequires:	openclipart-png = 0:%{version}
 BuildRequires:	openoffice.org-core
+%endif
 Requires:	openclipart-png = 0:%{version}
 Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
 BuildArch:	noarch
@@ -24,8 +33,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 OpenOffice.org extra galleries from <http://www.openclipart.org>.
 
 %prep
+%if %{with tarball}
+%setup -q
+%else
 %setup -q -c -T
+%endif
 
+%if %{without tarball}
 %build
 OPENCLIPART_DIR=%{_datadir}/openclipart
 GAL_BIN=%{_gengal}
@@ -81,6 +95,7 @@ for dir in $(find -L $OPENCLIPART_DIR -mindepth 1 -maxdepth 1 -type d | sort); d
 			--number-from "$GAL_NUMBER_FROM" || exit 1
 	}
 done
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT

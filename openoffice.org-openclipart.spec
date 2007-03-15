@@ -1,6 +1,7 @@
 # TODO
 #  - remove use of Xvfb
 Summary:	OpenOffice.org clipart from openclipart
+Summary(pl.UTF-8):	Cliparty dla OpenOffice.org z projektu openclipart
 Name:		openoffice.org-openclipart
 Version:	0.18
 Release:	1
@@ -23,6 +24,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 OpenOffice.org extra galleries from <http://www.openclipart.org>.
+
+%description -l pl.UTF-8
+Dodatkowe galerie clipartów dla OpenOffice.org pochodzące z projektu
+<http://www.openclipart.org>.
 
 %prep
 %setup -q -c -T

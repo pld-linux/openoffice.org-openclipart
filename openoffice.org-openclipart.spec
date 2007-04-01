@@ -8,7 +8,7 @@
 Summary:	OpenOffice.org clipart from openclipart
 Name:		openoffice.org-openclipart
 Version:	0.18
-Release:	3
+Release:	4
 License:	Creative Commons and/or Public Domain
 Group:		Applications/Graphics
 Source0:	%{name}-%{version}.tar.bz2
@@ -22,7 +22,7 @@ Requires:	openclipart-png = 0:%{version}
 Requires:	openoffice.org-core >= 1:2.1.0-0.m6.6
 BuildArch:	noarch
 # same as openoffice.org
-ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9 noarch
+ExclusiveArch:	%{ix86} ppc sparc sparcv9 noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_ooodir		%{_libdir}/openoffice.org
